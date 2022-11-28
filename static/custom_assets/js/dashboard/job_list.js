@@ -1,4 +1,4 @@
-let input = document.querySelector('input[name=disabledInput]');
+let input = document.querySelector('input[name=tags3]');
 tagify = new Tagify(input, {
     pattern             : /^.{0,20}$/,  // Validate typed tag(s) by Regex. Here maximum chars length is defined as "20"
     delimiters          : ",| ",        // add new tags when a comma or a space character is entered
