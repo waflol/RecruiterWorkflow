@@ -19,8 +19,6 @@ class RegisterView(View):
         return render(request, 'authentication/register/register.html', {'form': RegisterForm()})
 
     def post(self, request):
-        if request.user.is_authenticated:
-            return redirect('/')
         email = request.POST['email']
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']

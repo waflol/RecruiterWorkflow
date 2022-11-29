@@ -12,8 +12,6 @@ class LoginView(View):
         return render(request, 'authentication/login/login.html', {'form': LoginForm()})
 
     def post(self, request):
-        if request.user.is_authenticated:
-            return redirect('/')
         email = request.POST['email']
         password = request.POST['password']
         check_user = authenticate(username=email, password=password)
