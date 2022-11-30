@@ -3,7 +3,212 @@
 {% load i18n %}
 {% block css %}{% endblock %}
 {% block body %}
-    <h1>Add job</h1>
+    <!--begin::Toolbar-->
+    <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+        <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+            <!--begin::Page title-->
+            <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                <!--begin::Title-->
+                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Add Job</h1>
+                <!--end::Title-->
+                <!--begin::Breadcrumb-->
+                <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                    <!--begin::Item-->
+                    <li class="breadcrumb-item text-muted">
+                        <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+                    </li>
+                    <!--end::Item-->
+                    <!--begin::Item-->
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                    </li>
+                    <!--end::Item-->
+                    <!--begin::Item-->
+                    <li class="breadcrumb-item text-muted">AddJob</li>
+                    <!--end::Item-->
+                </ul>
+                <!--end::Breadcrumb-->
+            </div>
+            <!--end::Page title-->
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+    <!--end::Toolbar-->
+    <!--begin::Content-->
+    <div id="kt_app_content" class="app-content flex-column-fluid">
+        <!--begin::Content container-->
+        <div id="kt_app_content_container" class="app-container container-xxl">
+            <form id="kt_form_add_job" class="form" action="#" autocomplete="off">
+                {% csrf_token %}
+                <!--begin::Row-->
+                <div class="row g-5 g-xl-10 mb-5 mb-xl-10 justify-content-center">
+                    <!--begin::Col-->
+                    <div class="col-xl-10">
+                        <!--begin::Table widget 8-->
+                        <div class="card mb-5 mb-xl-8">
+                            <!--begin::Header-->
+                            <div class="card-header position-relative py-0 border-bottom-2 align-items-center justify-content-center">
+                                <!--begin::Nav-->
+                                <h1>Job Application Form</h1>
+                                <!--end::Nav-->
+                            </div>
+                            <!--end::Header-->
+                            <!--begin::Body-->
+                            <div class="card-body">
+                                <!--begin::Row-->
+                                <div class="row justify-content-center">
+                                    <div class="mb-10 col-xl-4">
+                                        <label for="exampleFormControlInput1" class="required form-label">Title</label>
+                                        <input type="email" class="form-control form-control-solid" placeholder="Example input"/>
+                                    </div>
+                                    <div class="mb-10 col-xl-4">
+                                        <label for="exampleFormControlInput1" class="required form-label">Location</label>
+                                        <input type="email" class="form-control form-control-solid" placeholder="Example input"/>
+                                    </div>
+                                    <div class="mb-10 col-xl-2">
+                                        <label for="exampleFormControlInput1" class="required form-label">Number</label>
+                                        <input type="email" class="form-control form-control-solid" placeholder="0"/>
+                                    </div>
+
+                                </div>
+                                <!--end::Row-->
+                                <!--begin::Row-->
+                                <div class="row justify-content-center">
+                                    <div class="mb-10 col-xl-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Description</label>
+                                        <input type="email" class="form-control form-control-solid" placeholder="Example input"/>
+                                    </div>
+                                </div>
+                                <!--end::Row-->
+                                <!--begin::Row-->
+                                <div class="row justify-content-center">
+                                    <div class="mb-10 col-xl-5">
+                                        <label for="exampleFormControlInput1" class="required form-label">Start Date</label>
+                                        <input type="email" class="form-control form-control-solid" placeholder="Example input"/>
+                                    </div>
+                                    <div class="mb-10 col-xl-5">
+                                        <label for="exampleFormControlInput1" class="required form-label">End Date</label>
+                                        <input type="email" class="form-control form-control-solid" placeholder="Example input"/>
+                                    </div>
+                                </div>
+                                <!--end::Row-->
+                                <!--begin::Row-->
+                                <div class="row justify-content-center">
+                                    <div class="mb-10 col-xl-6">
+                                        <label class="form-label">Types</label>
+                                        <input class="form-control form-control-solid" value="Bootstrap" id="kt_tagify_custom"/>
+                                        <div class="pt-3">
+                                            <span class="text-gray-700">Suggested:</span>
+                                            <span class="text-primary" id="kt_tagify_custom_suggestions">
+                                                    <span class="cursor-pointer" data-kt-suggestion="true">Full Time</span>,
+                                                    <span class="cursor-pointer" data-kt-suggestion="true">Part Time</span>,
+                                                    <span class="cursor-pointer" data-kt-suggestion="true">Internship</span>,
+                                                    <span class="cursor-pointer" data-kt-suggestion="true">Freelancer</span>
+                                                </span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-10 col-xl-4">
+                                        <label class="form-label">Skills</label>
+                                        <input class="form-control form-control-solid" value="css, html, javascript" id="kt_tagify_6"/>
+                                    </div>
+                                </div>
+                                <!--end::Row-->
+                                <!--begin::Row-->
+                                <div class="row justify-content-center">
+                                    <div class="mb-10 col-xl-4">
+                                        <label class="form-label">Category</label>
+                                        <input class="form-control form-control-solid" value="css, html, javascript" id="kt_tagify_7"/>
+                                    </div>
+                                    <div class="mb-10 col-xl-3">
+                                        <label class="form-label">Phone</label>
+                                        <input class="form-control form-control-solid" value="css, html, javascript" id="kt_tagify_6"/>
+                                    </div>
+                                    <div class="mb-10 col-xl-3">
+                                        <label class="form-label">Email</label>
+                                        <input class="form-control form-control-solid" value="css, html, javascript" id="kt_tagify_6"/>
+                                    </div>
+                                </div>
+                                <!--end::Row-->
+                            </div>
+                            <!--end: Card Body-->
+                        </div>
+                        <!--end::Table widget 8-->
+                    </div>
+                    <!--end::Col-->
+
+                    <!--begin::Col-->
+                    <div class="col-xl-10">
+                        <!--begin::Table widget 8-->
+                        <div class="card mb-5 mb-xl-8">
+                            <!--begin::Header-->
+                            <div class="card-header position-relative py-0 border-bottom-2 align-items-center justify-content-center">
+                                <!--begin::Nav-->
+                                <h1>Workflow</h1>
+                                <!--end::Nav-->
+                            </div>
+                            <!--end::Header-->
+                            <!--begin::Body-->
+                            <div class="card-body">
+                                <!--begin::Repeater-->
+                                <div id="kt_docs_repeater_basic">
+                                    <!--begin::Form group-->
+                                    <div class="form-group">
+                                        <div data-repeater-list="kt_docs_repeater_basic">
+                                            <div data-repeater-item>
+                                                <div class="form-group row">
+                                                    <div class="col-md-4">
+                                                        <label class="form-label">Name:</label>
+                                                        <input type="email" class="form-control mb-2 mb-md-0" placeholder="Enter full name" />
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label class="form-label">Number:</label>
+                                                        <input type="email" class="form-control mb-2 mb-md-0" placeholder="Enter contact number" />
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-light-danger mt-3 mt-md-8">
+                                                            <i class="la la-trash-o"></i>Delete
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end::Form group-->
+
+                                    <!--begin::Form group-->
+                                    <div class="form-group mt-5">
+                                        <a href="javascript:;" data-repeater-create class="btn btn-light-primary">
+                                            <i class="la la-plus"></i>Add
+                                        </a>
+                                    </div>
+                                    <!--end::Form group-->
+                                </div>
+                                <!--end::Repeater-->
+                            </div>
+                            <!--end: Card Body-->
+                        </div>
+                        <!--end::Table widget 8-->
+                    </div>
+                    <!--end::Col-->
+                    <div class="col-xl-10">
+                        <!--begin::Action-->
+                        <div class="float-end">
+                            <button href="#" class="btn btn-sm btn-light btn-primary me-2" type="button">Add Job</button>
+                            <a href="{% url 'joblist' %}" class="btn btn-sm btn-light me-2 btn btn-sm  btn-danger" type="button">Cancel</a>
+                        </div>
+                        <!--end::Action-->
+                    </div>
+                </div>
+                <!--end::Row-->
+            </form>
+        </div>
+        <!--end::Content container-->
+    </div>
+    <!--end::Content-->
+
+
+
 {% endblock %}
 {% block js %}
     <!--begin::Javascript-->
