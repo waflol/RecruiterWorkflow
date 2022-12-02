@@ -22,3 +22,9 @@ class AddJobView(LoginRequiredMixin, View):
 
     def post(self, request):
         pass
+
+
+class JobDetailView(LoginRequiredMixin, View):
+    def get(self, request):
+        context = {}
+        return render(request, 'dashboard/job/job_detail.html', context)
